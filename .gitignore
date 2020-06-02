@@ -1,0 +1,7 @@
+db
+node_modules
+.env
+create_table.js
+db_config.js
+package-lock.json
+yarn.lock
