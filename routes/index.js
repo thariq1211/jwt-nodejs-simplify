@@ -10,12 +10,7 @@ app.use("/auth", auth);
 app.use("/user", user);
 
 app.get("/", (req, res) => {
-  res.send(
-    "server up in port " +
-      process.env.PORT +
-      " and secure port " +
-      process.env.SECURE_PORT
-  );
+  res.send("server up");
 });
 
 module.exports = app;
