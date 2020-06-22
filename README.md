@@ -1,4 +1,4 @@
-# JWT with nodejs simplify
+# simple JWT with nodejs 
 JWT is one of method for authenticate user for security reason
 
 ## Instalation
