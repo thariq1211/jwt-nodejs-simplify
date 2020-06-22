@@ -5,6 +5,9 @@
   "scripts": {
     "start": "nodemon index.js"
   },
+  "engines": {
+    "node": "12.16.2"
+  },
   "author": "thor",
   "license": "ISC",
   "dependencies": {
