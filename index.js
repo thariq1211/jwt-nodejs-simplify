@@ -54,11 +54,28 @@ app.post("/login", (req, res) => {
       message: "Username and Password not given in request Body!",
     });
   } else {
-    const account = {
-      username: "agent1",
-      password: "1234",
-    };
-    if (username === account.username && password === account.password) {
+    const account = [
+      {
+        username: "agent1",
+        password: "1234",
+      },
+      {
+        username: "agent2",
+        password: "1234",
+      },
+      {
+        username: "agent3",
+        password: "1234",
+      },
+      {
+        username: "agent4",
+        password: "1234",
+      },
+    ];
+    const found = account.find(
+      (el) => el.username === username && el.password === password
+    );
+    if (found) {
       const token = generateAccessToken({ username });
       res.json({
         success: 1,
