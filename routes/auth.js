@@ -3,6 +3,11 @@ const router = express.Router();
 const account = require("../helpers/account");
 const { generateAccessToken } = require("../controller/jwtProvider");
 
+const getUserId = (agent) => {
+  const userId = account.filter((e) => e.username === agent)[0].id;
+  return userId;
+};
+
 router.post("/login", (req, res) => {
   const { username, password } = req.body;
   if (!username && !password) {
@@ -18,6 +23,7 @@ router.post("/login", (req, res) => {
       const token = generateAccessToken({ username });
       res.json({
         success: 1,
+        userId: getUserId(username),
         message: "success",
         token,
       });
