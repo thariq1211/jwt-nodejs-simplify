@@ -19,6 +19,11 @@ const account = [
     username: "agent4",
     password: "1234",
   },
+  {
+    id: 7,
+    username: "agent5",
+    password: "1234",
+  },
 ];
 
 module.exports = account;
