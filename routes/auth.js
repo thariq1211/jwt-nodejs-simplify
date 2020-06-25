@@ -8,6 +8,11 @@ const getUserId = (agent) => {
   return userId;
 };
 
+const getExt = (agent) => {
+  const userId = account.filter((e) => e.username === agent)[0].ext;
+  return userId;
+};
+
 router.post("/login", (req, res) => {
   const { username, password } = req.body;
   if (!username && !password) {
@@ -24,6 +29,7 @@ router.post("/login", (req, res) => {
       res.json({
         success: 1,
         userId: getUserId(username),
+        ext: getExt(username),
         message: "success",
         token,
       });
